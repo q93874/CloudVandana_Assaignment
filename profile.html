@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body with flexbox to push footer to bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #F8F9FA, #E0E0E0);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #4B79A1, #283E51);
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 25px 0;
+            font-size: 28px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+
+        header p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 400px;
+            max-width: 90%;
+            margin: 20px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-image img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover .profile-image img {
+            transform: scale(1.05);
+        }
+
+        .profile-info h2 {
+            margin: 15px 0;
+            font-size: 30px;
+            color: #2C3E50;
+            font-weight: 600;
+        }
+
+        .designation {
+            margin: 5px 0 20px;
+            font-size: 18px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .bio {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Social Media Icons */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            text-decoration: none;
+            color: #fff;
+            padding: 14px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-size: 22px;
+        }
+
+        .twitter { background-color: #1DA1F2; }   /* Bright Blue */
+        .linkedin { background-color: #0077B5; } /* Deep Blue */
+        .github { background-color: #333; }      /* Dark Gray */
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        /* Footer always at the bottom */
+        footer {
+            background: linear-gradient(135deg, #4B79A1, #283E51);
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-card {
+                width: 95%;
+            }
+
+            header {
+                font-size: 24px;
+                padding: 18px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Profile</h1>
+        <p>Discover my skills and journey.</p>
+    </header>
+
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="https://i.pinimg.com/736x/24/31/17/243117284a1f1c515f8d92b77b673483.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h2>Narendra Babu M</h2>
+            <p class="designation">Software Engineer Associate</p>
+            <p class="bio">Passionate Java full-stack developer, specializing in Spring Boot and Angular. Let's build innovative web applications together!</p>
+            <div class="social-media">
+                <a href="https://twitter.com/yourprofile" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/yourprofile" class="social-icon github"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Narendra Babu M. All rights reserved.</p>
+        <p>Connect with me!</p>
+    </footer>
+
+</body>
+</html>
