@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Parrots - Image Slider</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            font-size: 28px;
+            font-weight: bold;
+            padding: 15px;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slider-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 21%;
+    object-fit: 100%;
+   
+   
+
+}
+
+        .slider-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #prevBtn {
+            background: #ff5722;
+            color: white;
+        }
+
+        #nextBtn {
+            background: #4caf50;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>Colorful Parrots</header>
+    <div class="slider-container">
+        <img src="https://i.pinimg.com/736x/90/43/90/904390e32a9a8bdaeb5f6db39bc09cae.jpg" alt="Slider Image" class="slider-image" id="sliderImage">
+        <div class="slider-buttons">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            "https://i.pinimg.com/736x/90/43/90/904390e32a9a8bdaeb5f6db39bc09cae.jpg",
+            "https://i.pinimg.com/736x/4f/82/ff/4f82ffe4cca3e8b74aacdb28c7bd4d5b.jpg",
+            "https://i.pinimg.com/736x/71/25/2d/71252dc152747818c18d997fb03c8984.jpg",
+            "https://i.pinimg.com/736x/b2/32/c1/b232c1c1a117d7ae41c805119f9a8298.jpg",
+            "https://i.pinimg.com/736x/ed/53/a4/ed53a4db12b64fe2c07e7668c2cb863a.jpg"
+        ];
+
+        let currentIndex = 0;
+        const sliderImage = document.getElementById("sliderImage");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        function updateImage() {
+            sliderImage.src = images[currentIndex];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        nextBtn.addEventListener("click", nextImage);
+        prevBtn.addEventListener("click", prevImage);
+
+        // Initial image display
+        updateImage();
+    </script>
+</body>
+</html>
